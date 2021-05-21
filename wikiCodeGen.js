@@ -1,10 +1,16 @@
-const { chromium } = require('playwright');
+const { chromium, devices } = require('playwright');
+const iPhone = devices['iPhone 12 Pro Max'];
 
 (async () => {
   const browser = await chromium.launch({
     headless: false
   });
-  const context = await browser.newContext();
+  const context = await browser.newContext({
+    ...iPhone,
+    permissions:['geolocation'],
+    geolocation:{latitude:52.52, longitude: 13.39}
+
+  });
 
   // Open new page
   const page = await context.newPage();
