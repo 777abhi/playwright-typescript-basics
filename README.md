@@ -4,6 +4,7 @@
 
 ```javascript
 node st.js
+node wikiCodeGen.js
 ```
 
 ## Run Playwright interceptor with debug
