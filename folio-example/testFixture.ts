@@ -1,7 +1,10 @@
 import {folio} from "@playwright/test"
 import { devices } from "playwright";
 
+
 const fixtures = folio.extend();
+
+
 fixtures.browserOptions.override(async({},run) =>{
     await run({
         headless:false,
