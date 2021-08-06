@@ -23,3 +23,4 @@ fixtures.contextOptions.override(async ({contextOptions},run)=>{
 
 const folios = fixtures.build();
 export const it = folios.it;
+export const test = folio.test;
