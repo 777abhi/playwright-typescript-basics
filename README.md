@@ -12,6 +12,7 @@ npx cross-env PWDEBUG=1 node wikiCodeGen.js
 
 npx playwright codegen wikipedia.org
 npx playwright codegen https://demosite.executeautomation.com/index.html
+npx playwright codegen http://eaapp.somee.com/
 
 
 ## Test Runner playwright test runner
