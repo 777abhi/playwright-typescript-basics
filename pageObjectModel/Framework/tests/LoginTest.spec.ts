@@ -25,7 +25,9 @@ test.describe("Run basic E2E EA App site test", async () => {
 
         const context = await browser.newContext({
             ...iPhone,
-            videosPath:'videos/'
+            videosPath:'videos/',
+            locale:'de-DE',
+            timezoneId:'Europe/Berlin'
         })
 
 
