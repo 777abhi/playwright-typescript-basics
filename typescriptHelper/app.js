@@ -1,3 +1,5 @@
-"use strict";
 var userName1 = 'MSA';
-console.log(userName);
+console.log(userName1);
+console.log(userName1);
+console.log(userName1);
+console.log(userName1);

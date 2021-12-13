@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/777abhi/playwright.git"
+    "url": "https://github.com/777abhi/playwright-typescript-basics.git"
   },
   "author": "Abhi Sha",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/777abhi/playwright/issues"
+    "url": "https://github.com/777abhi/playwright-typescript-basics.git/issues"
   },
-  "homepage": "https://github.com/777abhi/playwright#readme"
+  "homepage": "https://github.com/777abhi/playwright-typescript-basics#readme"
 }
