@@ -1,5 +1,5 @@
 # Pre-requisite
-### Install NodeJS and Git from below links befor proceeding with below commands-
+### Install NodeJS and Git
  - [NodeJS](https://nodejs.org/en/)
  - [GIT](https://git-scm.com/downloads) 
 
