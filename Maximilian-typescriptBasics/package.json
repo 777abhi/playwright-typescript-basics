@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "test",
-    "start": "lite-server"
+    "start": "lite-server",
+    "build": "tsc -w"
   },
   "repository": {
     "type": "git",
