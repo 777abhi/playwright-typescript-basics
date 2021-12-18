@@ -9,3 +9,4 @@ function combine(input1, input2, resultConversion) {
     }
     return result;
 }
+//# sourceMappingURL=union-aliases.js.map

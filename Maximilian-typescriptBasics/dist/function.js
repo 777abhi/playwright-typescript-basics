@@ -11,14 +11,10 @@ function addAndHandle(n1, n2, cb) {
 }
 printResult(add(5, 12));
 console.log(printResult(add(5, 12)));
-// let combineValue: Function;
-// combineValue = add;
-// console.log(combineValue(8, 8));
 var combineValue;
 combineValue = add;
-// combineValue = printResult;
 console.log(combineValue(8, 8));
-// let someValue: undefined;
 addAndHandle(10, 20, function (result) {
     console.log(result);
 });
+//# sourceMappingURL=function.js.map
