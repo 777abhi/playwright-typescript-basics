@@ -1,0 +1,18 @@
+{
+  "name": "new-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --config=playwright.config.ts --workers 1",
+    "debug": "npx playwright test --config=playwright.config.ts --workers 1 --debug",
+    "testtag": "npx playwright test --config=playwright.config.ts --workers 1 --grep @mytag",
+    "testnottag": "npx playwright test --config=playwright.config.ts --workers 1 --grep-invert @mytag"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.22.2"
+  }
+}
