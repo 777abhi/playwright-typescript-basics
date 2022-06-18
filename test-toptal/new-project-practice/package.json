@@ -1,13 +1,14 @@
 {
-  "name": "new-project",
+  "name": "new-project-practice",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --config=playwright.config.ts --workers 1",
+    "test": "npx playwright test --config=playwright.config.ts --project=chromium",
     "debug": "npx playwright test --config=playwright.config.ts --workers 1 --debug",
-    "testtag": "npx playwright test --config=playwright.config.ts --workers 1 --grep @mytag",
-    "testnottag": "npx playwright test --config=playwright.config.ts --workers 1 --grep-invert @mytag"
+    "testtag": "npx playwright test --config=playwright.config.ts --workers 1 --grep @ut",
+    "testnottag": "npx playwright test --config=playwright.config.ts --workers 1 --grep-invert @mytag",
+    "test:e2e":"npx playwright test --config=e2e.config.ts --project=chromium"
   },
   "keywords": [],
   "author": "",

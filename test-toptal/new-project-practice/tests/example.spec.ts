@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { loadHomePage, assertPageTitle } from "../helpers";
 
 test("example", async ({ page }) => {
   await page.goto("http://example.com");
@@ -16,7 +17,7 @@ test("clicking on elements", async ({ page }) => {
   await expect(errorMessage).toContainText("Login and/or password are wrong.");
 });
 
-test("clicking on elements, working with selectors", async ({ page }) => {
+test.skip("clicking on elements, working with selectors", async ({ page }) => {
   //text
   await page.click("text=some text");
 
@@ -64,13 +65,32 @@ test.describe("Test suite", () => {
   });
 });
 
-test("Screenshots", async ({ page }) => {
-  await page.goto("https://example.com");
-  await page.screenshot({ path: "examplefullPage.png", fullPage: true });
+test.describe("test suit for hooks demo", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("https://example.com");
+  });
+
+  test("Screenshots", async ({ page }) => {
+    //await page.goto("https://example.com");
+    await page.screenshot({ path: "examplefullPage.png", fullPage: true });
+  });
+
+  test("single element screenshot", async ({ page }) => {
+    //await page.goto('https://example.com');
+    const elemnet = await page.locator("h1");
+    await elemnet.screenshot({ path: "exampleSingleElement.png" });
+  });
 });
 
-test('single element screenshot  @ut', async({page}) =>{
-await page.goto('https://example.com');
-const elemnet = await page.locator('h1');
-await elemnet.screenshot({path: 'exampleSingleElement.png'});
+test('use custom functions @ut', async ({page}) =>{
+await loadHomePage(page);
+//await page.pause();
+await assertPageTitle(page);
+// await page.click('text=This domain is for use in illustrative examples in documents. You may use this d');
+// await page.click('text=More information...');
+// await page.click('text=Example Domain This domain is for use in illustrative examples in documents. You');
+
+const element = await page.locator("p");
+await element.first().screenshot({ path: "firstexampleSingleElement.png" });
+await element.last().screenshot({ path: "lastexampleSingleElement.png" });
 });
