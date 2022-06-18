@@ -16,7 +16,7 @@ test("clicking on elements", async ({ page }) => {
   await expect(errorMessage).toContainText("Login and/or password are wrong.");
 });
 
-test.skip("clicking on elements, working with selectors", async ({ page }) => {
+test("clicking on elements, working with selectors", async ({ page }) => {
   //text
   await page.click("text=some text");
 
@@ -50,7 +50,7 @@ test.describe("Test suite", () => {
     );
   });
 
-  test("Assertions", async ({ page }) => {
+  test("Assertions @mytag", async ({ page }) => {
     await page.goto("https://example.com");
     await expect(page).toHaveURL("https://example.com");
     await expect(page).toHaveTitle("Example Domain");
@@ -62,4 +62,15 @@ test.describe("Test suite", () => {
     const nonExistingElement = await page.locator("h5");
     await expect(nonExistingElement).not.toBeVisible();
   });
+});
+
+test("Screenshots", async ({ page }) => {
+  await page.goto("https://example.com");
+  await page.screenshot({ path: "examplefullPage.png", fullPage: true });
+});
+
+test('single element screenshot  @ut', async({page}) =>{
+await page.goto('https://example.com');
+const elemnet = await page.locator('h1');
+await elemnet.screenshot({path: 'exampleSingleElement.png'});
 });
