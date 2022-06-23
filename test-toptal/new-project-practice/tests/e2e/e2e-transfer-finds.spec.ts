@@ -1,31 +1,29 @@
 import { test, expect } from "@playwright/test";
+import { HomePage } from "../../page/HomePage";
+import { LoginPage } from "../../page/LoginPage";
+import { LoggedInHomePage } from "../../page/LoggedInHomePage";
+import { Navbar } from "../../page/components/Navbar";
 
 test.describe("transfer funds and make payments", () => {
+  let homePage: HomePage;
+  let loginPage: LoginPage;
+  let loggedInHomePage: LoggedInHomePage;
+  let navbar: Navbar;
+
   test.beforeEach(async ({ page }) => {
-    await page.goto("http://zero.webappsecurity.com/index.html");
-    await page.click(".signin");
-    await page.type("input[name=user_login]", "username");
-    await page.type("input[name=user_password]", "password");
-    await page.click('input[value="Sign in"]');
-    await page.goBack();
+    homePage = new HomePage(page);
+    loginPage = new LoginPage(page);
+    loggedInHomePage = new LoggedInHomePage(page);
+    navbar = new Navbar(page);
+
+    await homePage.visit();
+    await homePage.clickSignIn();
+    await loginPage.performLogin("username", "password");
   });
   test("perform transfer", async ({ page }) => {
-    await page.click('strong:has-text("Online Banking")');
-    await page.click('span:has-text("Transfer Funds")');
-    await page.selectOption("#tf_fromAccountId", "2");
-    await page.selectOption("#tf_toAccountId", "3");
-    await page.type("#tf_amount", "10");
-    await page.type("#tf_description", "test transfer");
-    await page.click("#btn_submit");
-
-    const verifyHeader = await page.locator("h2.board-header");
-    await expect(verifyHeader).toContainText("Verify");
-
-    await page.click("#btn_submit");
-
-    const successMessage = await page.locator(".alert-success");
-    await expect(successMessage).toContainText(
-      "You successfully submitted your transaction."
-    );
+    await loggedInHomePage.clickBankingMenu();
+    await loggedInHomePage.clickAccountActivityLink();
+    await navbar.clickNavbarTab("Transfer Funds");
+    await navbar.transferFunds();
   });
 });

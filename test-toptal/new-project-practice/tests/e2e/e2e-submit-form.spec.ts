@@ -1,36 +1,37 @@
-import {test,expect} from '@playwright/test'
+import { test, expect } from "@playwright/test";
+import { HomePage } from "../../page/HomePage";
+import { LoginPage } from "../../page/LoginPage";
+import { LoggedInHomePage } from "../../page/LoggedInHomePage";
+import { FeedbackPage } from "../../page/FeedbackPage";
 
-test.describe("feedbackm form tests", () => {
-    test.beforeEach(async ({ page }) => {
-      await page.goto("http://zero.webappsecurity.com/index.html");
-      await page.click("#signin_button");
-      await page.type("#user_login", "username");
-      await page.type("#user_password", "password");
-      await page.click('input[value="Sign in"]');
-      await page.goto("http://zero.webappsecurity.com/index.html");
-      await page.click('#feedback div:has-text("Feedback")');
-    });
-  
-    test("feedbackform reset/clear form test", async ({ page }) => {
-      await page.type("#name", "name");
-      await page.type("#email", "email");
-      await page.type("#subject", "subject");
-      await page.type("#comment", "message");
-      await page.click("input[name=clear]");
-  
-      const elementName = await page.locator("#name");
-      await expect(elementName).toBeEmpty();
-      const elementComment = await page.locator("#comment");
-      await expect(elementComment).toBeEmpty();
-    });
-  
-    test("feedbackform submit positive", async ({ page }) => {
-      await page.type("#name", "name");
-      await page.type("#email", "email");
-      await page.type("#subject", "subject");
-      await page.type("#comment", "message");
-      await page.click("input[type=submit]");
-      await page.waitForSelector('#feedback-title')
-  
-    });
+test.describe("feedback form tests", () => {
+  let homePage: HomePage;
+  let loggedInHomePage: LoggedInHomePage;
+  let loginPage: LoginPage;
+  let feedbackPage: FeedbackPage;
+
+  test.beforeEach(async ({ page }) => {
+    homePage = new HomePage(page);
+    loggedInHomePage = new LoggedInHomePage(page);
+    loginPage = new LoginPage(page);
+    feedbackPage = new FeedbackPage(page);
+
+    await homePage.visit();
+    await homePage.clickSignIn();
+    await loginPage.performLogin("username", "password");
+    await loggedInHomePage.verifyLoggedInPage();
+    await loggedInHomePage.visitFeedbackPage();
   });
+
+  test("feedback form reset/clear form test", async () => {
+    await feedbackPage.fillForm("name", "email", "sub", "comment");
+    await feedbackPage.clearForm();
+    await feedbackPage.validateEmptyForm();
+  });
+
+  test("feedback form submit positive", async () => {
+    await feedbackPage.fillForm("name", "email", "sub", "comment");
+    await feedbackPage.submitForm();
+    await feedbackPage.validateSubmitForm();
+  });
+});

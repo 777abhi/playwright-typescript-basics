@@ -1,13 +1,13 @@
-import {test, expect} from '@playwright/test'
+import { test, expect } from "@playwright/test";
+import { HomePage } from "../../page/HomePage";
 
-test.describe('Search results', ()=>{
-    test('should find search results', async ({page})=>{
-        await page.goto('http://zero.webappsecurity.com/index.html');
-        await page.type('#searchTerm', 'bank');
-        await page.keyboard.press('Enter');
+test.describe("Search results", () => {
+  let homePage: HomePage;
+  test("should find search results", async ({ page }) => {
+    homePage = new HomePage(page);
 
-        const numberOfLinks = await page.locator('li > a')
-        await expect(numberOfLinks).toHaveCount(2);
-
-    })
-})
+    await homePage.visit();
+    await homePage.searchTerm("bank");
+    await homePage.validateNumberOfSearchResultsCount(2);
+  });
+});
