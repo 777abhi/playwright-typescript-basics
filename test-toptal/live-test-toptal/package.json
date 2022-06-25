@@ -3,6 +3,7 @@
         "@playwright/test":"1.22.2"
     },
     "scripts": {
-        "test":"npx playwright test --config=playwright.config.ts"
+        "test":"npx playwright test --config=playwright.config.ts",
+        "test:api":"npx playwright test --config=playwright.api.config.ts"
     }
 }
