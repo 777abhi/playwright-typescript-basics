@@ -4,7 +4,7 @@ import { LoginPage } from "../../page/LoginPage";
 import { LoggedInHomePage } from "../../page/LoggedInHomePage";
 import { Navbar } from "../../page/components/Navbar";
 
-test.describe.only("Purchase currency test", () => {
+test.describe("Purchase currency test", () => {
   let homePage: HomePage;
   let loginPage: LoginPage;
   let loggedInHomePage: LoggedInHomePage;
