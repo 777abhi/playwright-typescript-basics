@@ -2,7 +2,8 @@ import { test, expect } from "@playwright/test";
 
 import { extractCredentials } from "../e2e-helpers/helpers";
 
-test.describe("login / Logout flow", () => {
+// functionality changed on the website, refactor required
+test.describe.skip("login / Logout flow", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("https://www.phptravels.net/login");
   });
@@ -35,5 +36,3 @@ test.describe("login / Logout flow", () => {
     );
   });
 });
-
-
