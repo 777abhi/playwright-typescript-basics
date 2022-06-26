@@ -7,6 +7,7 @@ export class LoginPage {
   readonly signInButton: Locator;
   readonly errorMessageText: Locator;
 
+
   constructor(page: Page) {
     this.page = page;
     this.usernameInput = page.locator("#username");
@@ -16,7 +17,7 @@ export class LoginPage {
   }
 
   async visit() {
-    this.page.goto("https://www.rahulshettyacademy.com/loginpagePractise/");
+    await this.page.goto("https://www.rahulshettyacademy.com/loginpagePractise/");
   }
 
   async assertPageTitle() {
@@ -24,19 +25,22 @@ export class LoginPage {
     await expect(this.page).toHaveTitle("LoginPage Practise | Rahul Shetty Academy");
   }
 
-  async assertLoggedInPage(){
-      await this.page.waitForSelector('h1.my-4');
-  }
+
 
   async submitLogin(username: string, password: string) {
     await this.usernameInput.type(username);
     await this.passwordInput.type(password);
     await this.signInButton.click();
+  }
+
+  async assertIncorrectLoginMessage(){
     console.log(await this.errorMessageText.textContent());
-    await expect(this.errorMessageText).toHaveText('Incorrect username/password.');
+    await expect(this.errorMessageText).toContainText('Incorrect username/password.');
   }
 
   async waitForTimeout(timeout_in_ms: number) {
     await this.page.waitForTimeout(timeout_in_ms);
   }
+
+
 }
