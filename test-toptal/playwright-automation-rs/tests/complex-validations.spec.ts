@@ -25,7 +25,6 @@ test.describe("Test SUITE - more complex validation", () => {
       const framesPage = page.frameLocator('#courses-iframe');
       await framesPage.locator('li a[href*="lifetime-access"]:visible').click();
       await expect((await framesPage.locator('.text h2').textContent()).split(' ')[1]).toContain('13,522');
-      await page.pause();
   })
 
 });
