@@ -1,0 +1,12 @@
+{
+  "DemoTestWebsites": {
+    "rs_client": {
+      "url": "https://rahulshettyacademy.com/client/",
+      "username": "test@no-reply.com",
+      "password": "Test@1234"
+    },
+    "web_security": "http://zero.webappsecurity.com/login.html",
+    "login_practice": "https://www.rahulshettyacademy.com/loginpagePractise/",
+    "automation_practice": "https://www.rahulshettyacademy.com/AutomationPractice/"
+  }
+}
