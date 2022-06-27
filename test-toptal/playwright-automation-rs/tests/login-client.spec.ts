@@ -1,11 +1,12 @@
 import { test } from "@playwright/test";
 import { HomePage } from "../page-client/HomePage";
 import { LoginPage } from "../page-client/LoginPage";
+const settings = require("../stage.settings.json");
 
 let loginPage: LoginPage;
 let homePage: HomePage;
-const username = 'test@no-reply.com';
-const password = 'Test@1234';
+const username = settings.login_client.username;
+const password = settings.login_client.password;
 
 test.describe("verify Login Scenarios", () => {
   test.beforeEach(async ({ page }) => {
@@ -18,7 +19,7 @@ test.describe("verify Login Scenarios", () => {
     await loginPage.submitLogin("username@no-reply.com", "password");
     await loginPage.assertIncorrectLoginMessage();
   });
-  test('Positive Login Scenario', async ()=>{
+  test("Positive Login Scenario", async () => {
     await loginPage.visit();
     await loginPage.assertPageTitle();
     await loginPage.submitLogin(username, password);
@@ -26,18 +27,16 @@ test.describe("verify Login Scenarios", () => {
   });
 });
 
-test.describe('verify after login scenarios', ()=>{
-  
-  test.beforeEach(async ({page})=>{    
+test.describe.only("verify E2E scenarios", () => {
+  test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     homePage = new HomePage(page);
-  })
-  test('display product list at home page', async ()=>{
-    await loginPage.visit()
+  });
+  test("order a product on the website", async () => {
+    await loginPage.visit();
     await loginPage.assertPageTitle();
-    await loginPage.submitLogin(username, password) 
+    await loginPage.submitLogin(username, password);
     await homePage.assertHomePage();
     await homePage.getProductList();
-
-  })
-})
+  });
+});

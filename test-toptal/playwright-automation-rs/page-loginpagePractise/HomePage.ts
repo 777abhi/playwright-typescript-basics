@@ -10,12 +10,12 @@ export class HomePage {
   }
 
   async getProductList() {
-    console.log(await this.productListTitleText.first().textContent());
-    console.log(await this.productListTitleText.last().textContent());
+    // console.log(await this.productListTitleText.first().textContent());
+    // console.log(await this.productListTitleText.last().textContent());
 
-    for (let i = 0; i < 4; i++) {
-      console.log(await this.productListTitleText.nth(i).textContent());
-    }
+    // for (let i = 0; i < 4; i++) {
+    //   console.log(await this.productListTitleText.nth(i).textContent());
+    // }
 
     const allProductTitles = await this.productListTitleText.allTextContents();
     console.log(await allProductTitles);

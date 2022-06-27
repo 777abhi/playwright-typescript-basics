@@ -1,4 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
+const settings = require('../stage.settings.json')
 
 export class LoginPage {
   readonly page: Page;
@@ -16,7 +17,7 @@ export class LoginPage {
   }
 
   async visit() {
-    await this.page.goto("https://www.rahulshettyacademy.com/client/");
+    await this.page.goto(settings.login_client.baseURL);
   }
 
   //TODO

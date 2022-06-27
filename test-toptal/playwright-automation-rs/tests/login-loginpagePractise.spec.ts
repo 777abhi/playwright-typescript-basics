@@ -1,11 +1,12 @@
-import { test } from "@playwright/test";
-import { HomePage } from "../page-loginpagePractise/HomePage";
-import { LoginPage } from "../page-loginpagePractise/LoginPage";
+import { chromium, test } from "@playwright/test";
+import { HomePage } from "../page-loginPagePractise/HomePage";
+import { LoginPage } from "../page-loginPagePractise/LoginPage";
+const settings = require('../stage.settings.json')
 
 let loginPage: LoginPage;
 let homePage: HomePage;
-const username = 'rahulshettyacademy';
-const password = 'learning';
+const username = settings.login_loginPagePractise.username;
+const password = settings.login_loginPagePractise.password;
 
 test.describe("verify Login Scenarios", () => {
   test.beforeEach(async ({ page }) => {
@@ -39,5 +40,14 @@ test.describe('verify after login scenarios', ()=>{
     await homePage.assertHomePage();
     await homePage.getProductList();
 
+  })
+
+  test('UI dropdown, checkbox, radio control and child window handling', async ({context})=>{
+    await loginPage.visit();
+    await loginPage.selectUserRoleAs('consult');
+    await loginPage.selectUserAccessLevel('user');
+    await loginPage.selectUserAccessLevel('admin');
+    await loginPage.selectTerms('yes');
+    await loginPage.checkBlinkingText(context);
   })
 })
