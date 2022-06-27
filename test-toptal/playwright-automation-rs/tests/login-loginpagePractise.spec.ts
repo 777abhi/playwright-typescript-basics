@@ -1,7 +1,7 @@
 import { chromium, test } from "@playwright/test";
 import { HomePage } from "../page-loginPagePractise/HomePage";
 import { LoginPage } from "../page-loginPagePractise/LoginPage";
-const settings = require('../stage.settings.json')
+const settings = require("../stage.settings.json");
 
 let loginPage: LoginPage;
 let homePage: HomePage;
@@ -19,7 +19,7 @@ test.describe("verify Login Scenarios", () => {
     await loginPage.submitLogin("username", "password");
     await loginPage.assertIncorrectLoginMessage();
   });
-  test('Positive Login Scenario', async ()=>{
+  test("Positive Login Scenario", async () => {
     await loginPage.visit();
     await loginPage.assertPageTitle();
     await loginPage.submitLogin(username, password);
@@ -27,27 +27,27 @@ test.describe("verify Login Scenarios", () => {
   });
 });
 
-test.describe('verify after login scenarios', ()=>{
-  
-  test.beforeEach(async ({page})=>{    
+test.describe("verify after login scenarios", () => {
+  test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     homePage = new HomePage(page);
-  })
-  test('display product list at home page', async ()=>{
-    await loginPage.visit()
+  });
+  test("display product list at home page", async () => {
+    await loginPage.visit();
     await loginPage.assertPageTitle();
-    await loginPage.submitLogin(username, password) 
+    await loginPage.submitLogin(username, password);
     await homePage.assertHomePage();
     await homePage.getProductList();
+  });
 
-  })
-
-  test('UI dropdown, checkbox, radio control and child window handling', async ({context})=>{
+  test("UI dropdown, checkbox, radio control and child window handling", async ({
+    context,
+  }) => {
     await loginPage.visit();
-    await loginPage.selectUserRoleAs('consult');
-    await loginPage.selectUserAccessLevel('user');
-    await loginPage.selectUserAccessLevel('admin');
-    await loginPage.selectTerms('yes');
+    await loginPage.selectUserRoleAs("consult");
+    await loginPage.selectUserAccessLevel("user");
+    await loginPage.selectUserAccessLevel("admin");
+    await loginPage.selectTerms("yes");
     await loginPage.checkBlinkingText(context);
-  })
-})
+  });
+});

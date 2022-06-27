@@ -45,7 +45,7 @@ test.describe("verify E2E scenarios", () => {
   });
 });
 
-test.describe("verify E2E scenarios API + UI mix", () => {
+test.describe("verify E2E scenarios with API + UI mix", () => {
   test.beforeEach(async ({ page }) => {
     const apiContext = await request.newContext();
     apiUtils = new APIUtils(apiContext);
@@ -71,9 +71,6 @@ test.describe("verify E2E scenarios API + UI mix", () => {
   test("LOGIN via API, create order via API and view order from UI", async ({
     page,
   }) => {
-    
-
-    
     const token = await apiUtils.getToken();
 
     //Set token for login at UI

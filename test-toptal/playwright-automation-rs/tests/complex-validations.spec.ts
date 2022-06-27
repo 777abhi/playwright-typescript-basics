@@ -16,15 +16,15 @@ test.describe("Test SUITE - more complex validation", () => {
     await page.locator("#confirmbtn").click();
   });
 
-  test("hover", async({page})=>{
-      await page.locator('#mousehover').hover();
-  })
-  test("frames handle", async ({page})=>{
-
-    await page.locator('#mousehover').scrollIntoViewIfNeeded();
-      const framesPage = page.frameLocator('#courses-iframe');
-      await framesPage.locator('li a[href*="lifetime-access"]:visible').click();
-      await expect((await framesPage.locator('.text h2').textContent()).split(' ')[1]).toContain('13,522');
-  })
-
+  test("hover", async ({ page }) => {
+    await page.locator("#mousehover").hover();
+  });
+  test("frames handle", async ({ page }) => {
+    await page.locator("#mousehover").scrollIntoViewIfNeeded();
+    const framesPage = page.frameLocator("#courses-iframe");
+    await framesPage.locator('li a[href*="lifetime-access"]:visible').click();
+    await expect(
+      (await framesPage.locator(".text h2").textContent()).split(" ")[1]
+    ).toContain("13,522");
+  });
 });
