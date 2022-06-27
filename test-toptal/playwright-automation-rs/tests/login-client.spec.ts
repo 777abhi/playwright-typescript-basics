@@ -27,7 +27,7 @@ test.describe("verify Login Scenarios", () => {
   });
 });
 
-test.describe.only("verify E2E scenarios", () => {
+test.describe("verify E2E scenarios", () => {
   test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     homePage = new HomePage(page);
