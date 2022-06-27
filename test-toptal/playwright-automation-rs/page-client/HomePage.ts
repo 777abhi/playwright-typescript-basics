@@ -6,6 +6,7 @@ export class HomePage {
   readonly productListTitleText: Locator;
   readonly filterH4Text: Locator;
   readonly allProducts: Locator;
+  private orderID: string;
 
   constructor(page: Page) {
     this.page = page;
@@ -14,7 +15,7 @@ export class HomePage {
     this.allProducts = page.locator(".card-body");
   }
 
-  async getProductList() {
+  async orderProduct() {
     await this.page.waitForLoadState("networkidle");
     const allProductTitles = await this.productListTitleText.allTextContents();
     console.log(await allProductTitles);
@@ -31,6 +32,7 @@ export class HomePage {
         break;
       }
     }
+
     await this.page.locator("[routerlink*='cart']").click();
     expect(
       await this.page.waitForSelector('h3:has-text("adidas original")')
@@ -65,17 +67,20 @@ export class HomePage {
     await expect(this.page.locator(".hero-primary")).toContainText(
       " Thankyou for the order. "
     );
-    const orderID = await (
+    this.orderID = await (
       await this.page.locator(".em-spacer-1 .ng-star-inserted").textContent()
     )
       .replace("|", "")
       .replace("|", "")
       .trim();
-    console.log(orderID);
+    console.log(this.orderID);
+    return this.orderID;
+  }
 
+  async viewCreatedOrder(orderID: string) {
     await this.page.locator("[routerlink*=myorders]").first().click();
 
-    await this.page.locator('tbody').waitFor();
+    await this.page.locator("tbody").waitFor();
 
     const allOrdersCount = await this.page.locator("tbody tr").count();
     console.log(allOrdersCount);
@@ -88,12 +93,16 @@ export class HomePage {
           .textContent()) === orderID
       ) {
         console.log("found created orderID as -->" + orderID);
-        await this.page.locator("tbody tr").nth(i).locator("button").first().click();
+        await this.page
+          .locator("tbody tr")
+          .nth(i)
+          .locator("button")
+          .first()
+          .click();
         break;
       }
     }
-    await expect(this.page.locator('.col-text')).toHaveText(orderID);
-    await this.page.pause();
+    await expect(this.page.locator(".col-text")).toHaveText(orderID);
   }
   async assertHomePage() {
     await this.filterH4Text.nth(1).waitFor();

@@ -19,7 +19,7 @@ test.describe("Test SUITE - more complex validation", () => {
   test("hover", async({page})=>{
       await page.locator('#mousehover').hover();
   })
-  test.only("frames handle", async ({page})=>{
+  test("frames handle", async ({page})=>{
 
     await page.locator('#mousehover').scrollIntoViewIfNeeded();
       const framesPage = page.frameLocator('#courses-iframe');
