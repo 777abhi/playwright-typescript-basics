@@ -8,5 +8,7 @@
     "web_security": "http://zero.webappsecurity.com/login.html",
     "login_practice": "https://www.rahulshettyacademy.com/loginpagePractise/",
     "automation_practice": "https://www.rahulshettyacademy.com/AutomationPractice/"
-  }
+  },
+  "loginPayload":
+  { "userEmail": "test@no-reply.com", "userPassword": "Test@1234" }
 }
