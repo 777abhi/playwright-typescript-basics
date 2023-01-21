@@ -10,7 +10,7 @@ on:
         type: string
 
 jobs:
-  test:
+  run-test-and-upload-report:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     container:
