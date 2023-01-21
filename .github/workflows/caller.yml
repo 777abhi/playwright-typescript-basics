@@ -2,6 +2,9 @@ ame: main caller wf - test execution
 
 on:
   push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
 
 jobs:
   call-workflow-for-sanity:
