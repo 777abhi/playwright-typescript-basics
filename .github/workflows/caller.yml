@@ -18,3 +18,7 @@ jobs:
   uses: 777abhi/playwright-typescript-basics/.github/workflows/playwright.yml@master
   with:
    test_type: sanity
+ call-workflow-for-newFeature:
+  uses: 777abhi/playwright-typescript-basics/.github/workflows/playwright.yml@master
+  with:
+   test_type: newFeature
