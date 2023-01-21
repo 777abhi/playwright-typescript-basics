@@ -1,4 +1,4 @@
-ame: main caller wf - test execution
+name: main caller wf - test execution
 
 on:
   push:
