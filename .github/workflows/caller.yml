@@ -14,7 +14,7 @@ on:
         type: string
 
 jobs:
-  call-workflow-for-sanity:
-    uses: 777abhi/playwright-typescript-basics/.github/workflows/playwright.yml@master
-    with:
-      test_type: sanity
+ call-workflow-for-sanity:
+  uses: 777abhi/playwright-typescript-basics/.github/workflows/playwright.yml@master
+  with:
+   test_type: sanity
