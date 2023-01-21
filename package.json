@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test --project=chromium",
-    "test:report":"npx playwright show-report"
+    "test:sanity": "npx playwright test --project=chromium  -g \"sanity\"",
+    "test:regression": "npx playwright test --project=chromium -g \"regression\"",
+    "test:newFeature": "npx playwright test --project=chromium -g \"newFeature\"",
+    "test:report":"npx playwright show-report",
+    "test:debug":"npx playwright test --project=chromium --debug"
   },
   "keywords": [],
   "author": "",
