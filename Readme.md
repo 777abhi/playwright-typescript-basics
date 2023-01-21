@@ -11,6 +11,11 @@ npm test
 npm run test:report
 ```
 
+# Run test in debug mode
+```bash
+npm run test:debug
+```
+
 # Run sanity test
 ```bash
 npm run test:sanity

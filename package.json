@@ -8,6 +8,7 @@
     "test:sanity": "npx playwright test --project=chromium  -g \"sanity\"",
     "test:regression": "npx playwright test --project=chromium -g \"regression\"",
     "test:newFeature": "npx playwright test --project=chromium -g \"newFeature\"",
+    "test:api": "npx playwright test --project=chromium -g \"api\"",
     "test:report":"npx playwright show-report",
     "test:debug":"npx playwright test --project=chromium --debug"
   },
