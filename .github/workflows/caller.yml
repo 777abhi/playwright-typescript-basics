@@ -5,6 +5,13 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      test_type:
+        description: 'Type of test - sanity, regression, api, newFeature'
+        default: 'sanity'
+        required: true
+        type: string
 
 jobs:
   call-workflow-for-sanity:
