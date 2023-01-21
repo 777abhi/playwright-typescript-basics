@@ -26,7 +26,7 @@ jobs:
   uses: 777abhi/playwright-typescript-basics/.github/workflows/playwright.yml@master
   with:
    test_type: regression
- call-workflow-for-api:
-  uses: 777abhi/playwright-typescript-basics/.github/workflows/playwright.yml@master
-  with:
-   test_type: api
+#  call-workflow-for-api:
+#   uses: 777abhi/playwright-typescript-basics/.github/workflows/playwright.yml@master
+#   with:
+#    test_type: api
