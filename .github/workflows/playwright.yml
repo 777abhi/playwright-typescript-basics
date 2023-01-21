@@ -1,6 +1,6 @@
-name: name: re-usable flow java maven Playwright Tests
+name: reusable flow java maven Playwright Tests
+
 on:
-  on:
   workflow_call:
     inputs:
       test_type:
