@@ -6,7 +6,7 @@ https://playwright.dev/docs/intro
 npm test
 ```
 
-# Run report test
+# Run report
 ```bash
 npm run test:report
 ```
@@ -25,3 +25,6 @@ npm run test:regression
 ```bash
 npm run test:newFeature
 ```
+
+# Author test cases 
+npx playwright codegen demo.playwright.dev/todomvc
