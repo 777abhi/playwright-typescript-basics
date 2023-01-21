@@ -31,5 +31,10 @@ npm run test:regression
 npm run test:newFeature
 ```
 
+# Run api test
+```bash
+npm run test:api
+```
+
 # Author test cases 
 npx playwright codegen demo.playwright.dev/todomvc
