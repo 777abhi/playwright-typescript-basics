@@ -1,4 +1,4 @@
-[![main caller wf - test execution](https://github.com/777abhi/playwright-typescript-basics/actions/workflows/caller.yml/badge.svg?branch=master)](https://github.com/777abhi/playwright-typescript-basics/actions/workflows/caller.yml)
+[![main caller wf - test execution](https://github.com/777abhi/playwright-typescript-basics/actions/workflows/caller.yml/badge.svg)](https://github.com/777abhi/playwright-typescript-basics/actions/workflows/caller.yml)
 
 # Framework Documentation 
 https://playwright.dev/docs/intro
