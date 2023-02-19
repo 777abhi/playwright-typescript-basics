@@ -9,13 +9,14 @@
     "test:regression": "npx playwright test --project=chromium -g \"regression\"",
     "test:newFeature": "npx playwright test --project=chromium -g \"newFeature\"",
     "test:api": "npx playwright test --project=chromium -g \"api\"",
-    "test:report":"npx playwright show-report",
-    "test:debug":"npx playwright test --project=chromium --debug"
+    "test:report": "npx playwright show-report",
+    "test:debug": "npx playwright test --project=chromium --debug"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.29.2"
+    "@playwright/test": "^1.29.2",
+    "dd-trace": "^3.14.1"
   }
 }
