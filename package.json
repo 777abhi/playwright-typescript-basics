@@ -4,7 +4,7 @@
   "description": "https://playwright.dev/docs/intro",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --project=chromium",
+    "test": "NODE_OPTIONS=\"dd-trace/ci/init\" npx playwright test --project=chromium",
     "test:sanity": "npx playwright test --project=chromium  -g \"sanity\"",
     "test:regression": "npx playwright test --project=chromium -g \"regression\"",
     "test:newFeature": "npx playwright test --project=chromium -g \"newFeature\"",
