@@ -4,7 +4,7 @@
   "description": "typescript helper library",
   "main": "index.js",
   "dependencies": {
-    "typescript": "4.9.4",
+    "typescript": "4.9.5",
     "lite-server": "2.6.1"
   },
   "scripts": {
