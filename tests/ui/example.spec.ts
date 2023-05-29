@@ -18,7 +18,7 @@ test('sanity - get started link & explore', async ({ page }) => {
   await page.goto('https://playwright.dev/');
   await page.getByRole('link', { name: 'Get started' }).click();
   await page.getByRole('heading', { name: 'Installation' }).click();
-  await page.getByRole('listitem').filter({ hasText: 'Getting StartedInstallationWriting TestsRunning TestsTest GeneratorTrace ViewerC' }).getByRole('link', { name: 'Trace Viewer' }).click();
+  await page.getByRole('listitem').filter({ hasText: 'Getting StartedInstallation' }).getByRole('link', { name: 'Trace Viewer' }).click();
   await page.getByRole('button', { name: 'Search' }).click();
   await page.getByPlaceholder('Search docs').fill('test');
   await page.getByRole('link', { name: 'Playwright enables reliable end-to-end testing for modern web …' }).click();
