@@ -59,4 +59,4 @@ NODE_OPTIONS="-r dd-trace/ci/init" DD_ENV=ci DD_SERVICE=my-javascript-app DD_CIV
 
 
 
-printenv 
+printenv
