@@ -1,0 +1,17 @@
+name: smoke tests
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      test_type:
+        description: 'Type of test - sanity, regression, api, newFeature'
+        default: 'sanity'
+        required: true
+        type: string
+
+jobs:
+ smoke-test:
+  uses: 777abhi/lt-github-workflows/.github/workflows/nodejs-playwright.yml@feature-reusable-br
+  with:
+   test_type: sanity
