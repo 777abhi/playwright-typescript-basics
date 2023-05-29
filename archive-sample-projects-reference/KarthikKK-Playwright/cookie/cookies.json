@@ -1,0 +1,62 @@
+[
+  {
+    "sameSite": "Lax",
+    "name": "b",
+    "value": "b",
+    "domain": "eaapp.somee.com",
+    "path": "/Account",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "Lax",
+    "name": "b",
+    "value": "b",
+    "domain": "eaapp.somee.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "Lax",
+    "name": "ASP.NET_SessionId",
+    "value": "iar3xermqozvkya2utg44qmu",
+    "domain": "ads.mgmt.somee.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": false
+  },
+  {
+    "sameSite": "Lax",
+    "name": "TR-SESSION-ID",
+    "value": "NnFGfu-oTJLErvZ0ia5g",
+    "domain": ".somee.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false
+  },
+  {
+    "sameSite": "Lax",
+    "name": "__RequestVerificationToken",
+    "value": "3An0-7LnEVnvv4Jc0dDusOqZNH-8rgoQ1c5UolA1UcSMWVkIaPwpYC7ebHRA7f90Bdb2Kp4qZ3WbwkRz84eSdJlTcTCCcWHs1O0pnymM7VM1",
+    "domain": "eaapp.somee.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": false
+  },
+  {
+    "sameSite": "Lax",
+    "name": ".AspNet.ApplicationCookie",
+    "value": "4bRvBX715f_G-FihWoBQDYbsUYRX0XfrvCX1-OEPGl9KAom3XORLfu2-s0s26YHfVqJCEzy6YOngBltwcYshaLTzslLlAgivx8pjoO0wsSEgsueBrBQq5_r09rLRzi3TduN-CsQs5pwodC5Ok4T2URhKQXcrmP9YLDqBBkIQ9KC9bpXoErjbgdUnn2Id_NBZ73KHtGzLoRVef2GbJl2_VZaSBRLaL_eiyEx71oqBXqwAnxGoquViuzIBcuUQeWoRODHcbMdpu4h5oo7IYWLCZ5Op50QQZxeYNjXbfVf9_2vYPzs6fKf1q_SL0--MVAZsvhLsaayzyNnbkrQH1Nz7B1xD2JF8m0pPYYTbaB3y0ibec0um_qSVqdZ9XTo60P0VbMib7biLc4YsVermR4M3FzLKNje8m4xgmZ4xt99TZN3hu8sljzQI1OR-mWQzvCA6tI1pwNQ-ralopkY6P-KDFM0IxTC75slNpJ6HB-AO7ldW-MMCnnZD0_bdeJMajenip6AaSy6Eh95ihJ_lXHVppQ",
+    "domain": "eaapp.somee.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": false
+  }
+]

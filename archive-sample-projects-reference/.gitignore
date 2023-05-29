@@ -1,0 +1,9 @@
+node_modules
+*.png
+node_modules/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+.DS_Store
+test-toptal/new-project-practice/playwright-report/index.html
+.DS_Store

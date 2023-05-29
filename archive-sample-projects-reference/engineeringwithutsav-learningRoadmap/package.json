@@ -1,0 +1,15 @@
+{
+  "name": "engineeringwithutsav-learningroadmap",
+  "version": "1.0.0",
+  "description": "Learning Roadmap planned by Utsav",
+  "main": "index.js",
+  "devDependencies": {
+    "@playwright/test": "1.17.1",
+    "playwright": "1.17.1"
+  },
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "author": "Abhi Sha",
+  "license": "ISC"
+}
