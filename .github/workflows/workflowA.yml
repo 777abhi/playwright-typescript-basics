@@ -1,6 +1,7 @@
 name: Workflow A
 
 on:
+  workflow_call:
 
 jobs:
   build:
