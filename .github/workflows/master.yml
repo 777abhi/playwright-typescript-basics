@@ -7,8 +7,8 @@ on:
 jobs:
  job1:
   uses: 777abhi/playwright-typescript-basics/.github/workflows/workflowA.yml@chore-point-to-main-wf-reusable
-#  job2:
-#   runs-on: ubuntu-latest
-#   needs: job1
-#   steps:
-#     - run: echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}
+ job2:
+  runs-on: ubuntu-latest
+  needs: job1
+  steps:
+    - run: echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}
