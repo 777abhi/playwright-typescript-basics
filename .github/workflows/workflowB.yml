@@ -1,0 +1,24 @@
+name: Workflow B
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Call Workflow A
+        uses: ./.github/workflows/workflowA.yml@chore-point-to-main-reusable
+
+      # Capture the output of Workflow A
+      - name: Capture Workflow A output
+        id: workflow_a_output
+        run: echo ${{ steps.set_output.outputs.output_data }}
+
+      # Use the output in Workflow B
+      - name: Use Workflow A output
+        run: echo "The output from Workflow A is ${{ steps.workflow_a_output.outputs.output_data }}"

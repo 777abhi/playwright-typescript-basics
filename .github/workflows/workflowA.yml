@@ -1,0 +1,21 @@
+name: Workflow A
+
+on:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Perform build steps or any other necessary actions
+      - name: Build
+        run: echo "Building Workflow A..."
+
+      # Define the output
+      - name: Set output
+        id: set_output
+        run: |
+          echo "::set-output name=output_data::Workflow A Output"
