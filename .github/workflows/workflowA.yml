@@ -22,9 +22,8 @@ jobs:
     steps:
       - id: step1
         run: |
-          random_word=test
-          echo "firstword=$random_word" >> $GITHUB_ENV
+          echo "firstword=test" >> $GITHUB_ENV
       - id: step2
         run: |
           random_word=value
-          echo "secondword=$random_word" >> $GITHUB_ENV
+          echo "secondword=value" >> $GITHUB_ENV
