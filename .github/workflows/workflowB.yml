@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Call Workflow A
-        uses: ./.github/workflows/workflowA.yml@chore-point-to-main-wf-reusable
+        uses: 777abhi/playwright-typescript-basics/.github/workflows/workflowA.yml@chore-point-to-main-wf-reusable
 
       # Capture the output of Workflow A
       - name: Capture Workflow A output
