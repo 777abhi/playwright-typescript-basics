@@ -21,12 +21,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
 
-      - name: Run JavaScript File and Set Output Environment Variable
+      - name: Run JavaScript File and Set Output
         id: random_word
-        run: |
-          randomWord=$(node random-word.js)
-          echo "RANDOM_WORD=${randomWord}" >> $GITHUB_ENV
+        run: node random-word.js
 
       - name: Display RANDOM_WORD
         run: |
-          echo "RANDOM_WORD=${{ env.RANDOM_WORD }}"
+          echo "RANDOM_WORD=${{ steps.random_word.outputs.RANDOM_WORD }}"
