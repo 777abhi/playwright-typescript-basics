@@ -5,3 +5,4 @@ const randomWord = words[randomIndex];
 process.env.RANDOM_WORD = randomWord;
 
 console.log('Random word:', randomWord);
+console.log('Environment variable RANDOM_WORD:', process.env.RANDOM_WORD);

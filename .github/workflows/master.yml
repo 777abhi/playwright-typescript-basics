@@ -14,8 +14,6 @@ jobs:
     - run: echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}
  job3:
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ steps.random_word.outputs.RANDOM_WORD }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -29,7 +27,6 @@ jobs:
           node random-word.js
           env
 
-      - name: Display Random Word
+      - name: Display RANDOM_WORD
         run: |
-          env
-          echo "The random word is ${{ steps.random_word.outputs.RANDOM_WORD }}"
+          echo "RANDOM_WORD=${{ steps.random_word.outputs.RANDOM_WORD }}"
