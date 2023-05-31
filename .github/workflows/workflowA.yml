@@ -22,9 +22,9 @@ jobs:
     steps:
       - id: step1
         env:
-          FIRST_WORD: firstword=test
+          FIRST_WORD: "firstword=test"
         run: echo $FIRST_WORD >> $GITHUB_ENV
       - id: step2
         env:
-          SECOND_WORD: secondword=value
+          SECOND_WORD: "secondword=value"
         run: echo $SECOND_WORD >> $GITHUB_ENV
