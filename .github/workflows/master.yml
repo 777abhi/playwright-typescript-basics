@@ -26,8 +26,8 @@ jobs:
       - name: Run JavaScript File
         id: random_word
         run: |
-          env
           node random-word.js
+          env
 
       - name: Display Random Word
         run: |
