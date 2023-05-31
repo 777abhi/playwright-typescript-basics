@@ -23,7 +23,9 @@ jobs:
 
       - name: Run JavaScript File and Set Output
         id: random_word
-        run: node random-word.js
+        run: |
+          npm install
+          node random-word.js
 
       - name: Display RANDOM_WORD
         run: |
