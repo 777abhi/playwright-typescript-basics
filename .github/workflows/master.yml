@@ -29,4 +29,4 @@ jobs:
 
       - name: Display RANDOM_WORD
         run: |
-          echo "RANDOM_WORD=${{ steps.random_word.outputs }}"
+          echo "RANDOM_WORD=${{ steps.random_word }}"
