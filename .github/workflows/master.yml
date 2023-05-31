@@ -12,3 +12,19 @@ jobs:
   needs: job1
   steps:
     - run: echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}
+ job3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+
+      - name: Run JavaScript File
+        id: random_word
+        run: node random-word.js
+
+      - name: Display Random Word
+        run: |
+          echo "The random word is ${{ steps.random_word.outputs.RANDOM_WORD }}"
