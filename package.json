@@ -13,11 +13,12 @@
     "test:debug": "npx playwright test --project=chromium --debug"
   },
   "keywords": [],
-  "author": "",
+  "author": "Abhinav Sharma <777abhi@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@actions/core": "1.10.0",
     "@playwright/test": "1.34.3",
-    "dd-trace": "^3.14.1",
-    "@actions/core":"1.10.0"
-  }
+    "dd-trace": "^3.14.1"
+  },
+  "repository": "https://github.com/777abhi/playwright-typescript-basics.git"
 }
