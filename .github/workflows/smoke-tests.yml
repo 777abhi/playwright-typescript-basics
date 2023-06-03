@@ -12,6 +12,6 @@ on:
 
 jobs:
  smoke-test:
-  uses: 777abhi/lt-github-workflows/.github/workflows/nodejs-playwright.yml@master
+  uses: 777abhi/lt-github-workflows/.github/workflows/nodejs-playwright.yml@main
   with:
    test_type: sanity
