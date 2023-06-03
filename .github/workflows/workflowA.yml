@@ -1,0 +1,30 @@
+name: Reusable workflow
+
+on:
+  workflow_call:
+    # Map the workflow outputs to job outputs
+    outputs:
+      firstword:
+        description: "The first output string"
+        value: ${{ jobs.example_job.outputs.output1 }}
+      secondword:
+        description: "The second output string"
+        value: ${{ jobs.example_job.outputs.output2 }}
+
+jobs:
+  example_job:
+    name: Generate output
+    runs-on: ubuntu-latest
+    # Map the job outputs to step outputs
+    outputs:
+      output1: ${{ steps.step1.outputs.firstword }}
+      output2: ${{ steps.step2.outputs.secondword }}
+    steps:
+      - id: step1
+        env:
+          FIRST_WORD: hello
+        run: echo "firstword=$FIRST_WORD" >> $GITHUB_OUTPUT
+      - id: step2
+        env:
+          SECOND_WORD: world
+        run: echo "secondword=$SECOND_WORD" >> $GITHUB_OUTPUT
