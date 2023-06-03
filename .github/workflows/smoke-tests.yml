@@ -1,6 +1,7 @@
 name: smoke tests
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       test_type:
