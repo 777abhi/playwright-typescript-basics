@@ -36,5 +36,11 @@
 
  //get tsconfig.json
  npx tsc --init 
+
+//node initialisation
+ npx npm init -y
+
+ //keep checking the src folder to track changes 
+ npx tsc -w
 ```
 
