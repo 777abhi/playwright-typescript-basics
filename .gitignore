@@ -1,6 +1,0 @@
-*.png
-playwright-report/index.html
-node_modules/
-/test-results/
-/playwright-report/
-/playwright/.cache/
