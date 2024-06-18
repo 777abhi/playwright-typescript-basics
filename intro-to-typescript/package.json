@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "typescript": "^5.2.2"
+    "typescript": "^5.4.5"
   },
   "name": "intro-to-typescript",
   "description": "- JavaScript - managed by VOLUNTEERS   - TypeScript enforces a structure to JavaScript  - Microsoft released in Oct 2012  - Superset of JavaScript   - ECMAScript supports TypeScript, formalized im 2015  - Transpile as opposed to compile",
