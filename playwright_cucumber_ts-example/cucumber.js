@@ -8,7 +8,6 @@ const common = `
   --format progress-bar 
   --format @cucumber/pretty-formatter
   --format-options ${JSON.stringify({ snippetInterface: 'async-await' })}
-  --publish-quiet
   `;
 
 const getWorldParams = () => {
