@@ -1,14 +1,6 @@
 import { ICustomWorld } from './custom-world';
-import { browserOptions } from './config';
 import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from '@cucumber/cucumber';
-import {
-  chromium,
-  ChromiumBrowser,
-  firefox,
-  FirefoxBrowser,
-  webkit,
-  WebKitBrowser,
-} from 'playwright';
+import { chromium, ChromiumBrowser, FirefoxBrowser, WebKitBrowser } from 'playwright';
 import { ITestCaseHookParameter } from '@cucumber/cucumber/lib/support_code_library_builder/types';
 
 // eslint-disable-next-line no-var
@@ -19,19 +11,33 @@ declare global {
   var browser: ChromiumBrowser | FirefoxBrowser | WebKitBrowser;
 }
 
+// LambdaTest capabilities
+const capabilities = {
+  browserName: 'Chrome', // Browsers allowed: `Chrome`, `MicrosoftEdge`, `pw-chromium`, `pw-firefox` and `pw-webkit`
+  browserVersion: 'latest',
+  'LT:Options': {
+    platform: 'Windows 10',
+    build: 'Playwright TS Build',
+    name: 'Playwright Test',
+    user: 'xxx',
+    accessKey: 'xxx',
+    network: true,
+    video: true,
+    console: true,
+    tunnel: false, // Add tunnel configuration if testing locally hosted webpage
+    tunnelName: '', // Optional
+    geoLocation: '', // country code can be fetched from https://www.lambdatest.com/capabilities-generator/
+  },
+};
+
 setDefaultTimeout(process.env.PWDEBUG ? -1 : 60 * 1000);
 
 BeforeAll(async function () {
-  switch (process.env.BROWSER) {
-    case 'firefox':
-      browser = await firefox.launch(browserOptions);
-      break;
-    case 'webkit':
-      browser = await webkit.launch(browserOptions);
-      break;
-    default:
-      browser = await chromium.launch(browserOptions);
-  }
+  browser = await chromium.connect(
+    `wss://cdp.lambdatest.com/playwright?capabilities=${encodeURIComponent(
+      JSON.stringify(capabilities),
+    )}`,
+  );
 });
 
 Before({ tags: '@ignore' }, async function () {
