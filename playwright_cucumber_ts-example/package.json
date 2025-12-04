@@ -27,7 +27,7 @@
     "cucumber-html-reporter": "^6.0.0",
     "cucumber-pretty": "6.0.1",
     "expect": "29.5.0",
-    "playwright": "1.55.1"
+    "playwright": "1.56.1"
   },
   "devDependencies": {
     "@types/expect": "24.3.0",
