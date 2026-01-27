@@ -1,0 +1,15 @@
+{
+  "name": "playwright-practice",
+  "version": "1.0.0",
+  "description": "This guide is designed for **Manual and Exploratory Quality Engineers** who want to add Playwright to their toolkit. Even if you don't write code every day, Playwright offers powerful tools to speed up your testing, improve bug reporting, and handle repetitive tasks.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^25.0.10"
+  }
+}
